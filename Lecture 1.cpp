@@ -25,5 +25,5 @@ void mergeArray(vector<int> &a, vector<int> &b, int m, int n){
 }
 
 int main() {
-    
+    return 0;
 }
