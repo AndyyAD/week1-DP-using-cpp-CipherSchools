@@ -47,20 +47,20 @@ using namespace std;
 
 // search a 2d matrix ii
 
-// bool searchMatrix(vector<vector<int>>& matrix, int target) {
-//     int m = 0;
-//     int n = matrix[0].size()-1;
-//     while (m<=matrix.size()-1 and n>=0){
-//         if(target == matrix[m][n]){
-//             return true;
-//         } else if (target < matrix[m][n]){
-//             n--;
-//         } else if (target > matrix[m][n]){
-//             m++;
-//         }
-//     }
-//     return false;
-// }
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+    int m = 0;
+    int n = matrix[0].size()-1;
+    while (m<=matrix.size()-1 and n>=0){
+        if(target == matrix[m][n]){
+            return true;
+        } else if (target < matrix[m][n]){
+            n--;
+        } else if (target > matrix[m][n]){
+            m++;
+        }
+    }
+    return false;
+}
 
 int main() {
     return 0;
