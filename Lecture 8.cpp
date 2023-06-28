@@ -66,6 +66,49 @@ using namespace std;
 //     return ans;
 // }
 
+// permutation
+
+// void solve(vector<int> &nums, int ind, vector<vector<int>> &ans, int max) {
+//     if (ind >= max) {
+//         ans.push_back(nums);
+//         return;
+//     }
+//     for (int i = ind; i < max; i++) {
+//         swap(nums[ind], nums[i]);
+//         solve(nums, ind + 1, ans, max);
+//         swap(nums[i], nums[ind]);
+//     }
+// }
+
+// vector<vector<int>> permute(vector<int> &nums) {
+//     vector<vector<int>> ans;
+//     int max = nums.size();
+//     solve(nums, 0, ans, max);
+//     return ans;
+// }
+
+// subset or power set
+
+void solve(int n, vector<vector<int>> &ans, vector<int> &sans, int i, vector<int> &nums) {
+    if (i == n) {
+        ans.push_back(sans);
+        return;
+    }
+
+    sans.push_back(nums[i]);
+    solve(n, ans, sans, i + 1, nums);
+    sans.pop_back();
+    solve(n, ans, sans, i + 1, nums);
+}
+
+vector<vector<int>> subsets(vector<int> &nums) {
+    vector<vector<int>> ans;
+    vector<int> sans;
+
+    solve(nums.size(), ans, sans, 0, nums);
+    return ans;
+}
+
 int main() {
     return 0;
 }
